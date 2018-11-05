@@ -1,0 +1,15 @@
+version: '3'
+services:
+  redis:
+    image: redis:alpine
+    container_name: redis
+    volumes:
+      - /home/lytechxjl/docker/redis/data:/data
+    command: redis-server --requirepass LangYangTech!
+    ports:
+      - "6379:6379"
+    restart: always
+    logging: 
+      driver: "json-file"
+      options:
+        max-size: "1m"
